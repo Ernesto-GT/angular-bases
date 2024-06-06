@@ -1,0 +1,11 @@
+h1{
+  /*Determina el tamaño de los textos que usen h1 en 50px*/
+  font-size: 50px;
+}
+
+dd{
+  /*Por default 1rem=16px*/
+  font-size: 2rem;
+  /*Cambia el grosor de la letra, con bold la hace en negritas*/
+  font-weight: bold;
+}

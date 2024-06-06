@@ -1,0 +1,39 @@
+<h1>{{name}}</h1>
+
+<!--? dl Indica que se va a realizar una lista de elementos-->
+<dl>
+  <!--?td es un table description-->
+  <td>Nombre: </td>
+  <!--Description-->
+  <dd>{{name}}</dd>
+
+  <td>Edad: </td>
+  <dd>{{age}}</dd>
+
+  <td>Método: </td>
+  <dd>{{getHeroDescription()}}</dd>
+
+  <td>Capitalizado: </td>
+  <dd>{{capitalizedName}}</dd>
+</dl>
+
+<!--En boostrap: btn btn-primary es un estilo propio para los botones-->
+<button
+*ngIf="aux_name"
+(click)="changeHero()"
+class="btn btn-primary mx-2">
+  Cambiar nombre
+</button>
+<!--?El ngIF nos permite dejar de mostrar un apartado si se cuple cierta condición-->
+<button
+*ngIf="age !== 20"
+(click)="changeAge()"
+class="btn btn-primary">
+  Cambiar edad
+</button>
+
+<button
+(click)="resetForm()"
+class="btn btn-primary mx-2">
+  Reset
+</button>

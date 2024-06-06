@@ -1,0 +1,40 @@
+<h3>Listado de Héroes</h3>
+
+<!--?Un div es un agrupador en html-->
+<!--Si fue eliminado algun Heroe, se mostrara el mensaje-->
+<div *ngIf="deletedHero ; else nothingWasDeleted">
+  <!--text-danger es un estilo de alterta/error para los textos-->
+  <h3>Heroe Borrado <small class="text-danger"> {{deletedHero}} </small></h3>
+</div>
+<!--?Un ng-template es basicamente un div que no ha sido creado, hasta que se le mande la señal de que se muestre-->
+<ng-template #nothingWasDeleted> <!--Esta es una referencia local al else del condicional anterior-->
+  <h3 >No ha borrado nada.</h3>
+</ng-template>
+
+<!--btn-outline-danger es un estilo para errores o eliminaciones de datos-->
+<button
+*ngIf="heroNames.length > 0"
+(click)="removeLastHero()"
+class="btn btn-outline-danger">
+  Eliminar Ultimo Heroe
+</button>
+
+<!--?Order List / Tabla-->
+<!--list-group es una clase de boostrap para dar estilos a una lista-->
+<ul class="mt-2 list-group">
+  <!--list-group-item es una calse para los elementos de una lista-->
+  <!-- <li class="list-group-item">Spiderman</li>
+  <li class="list-group-item">Ironman</li>
+  <li class="list-group-item">Hulk</li>
+  <li class="list-group-item">Thor</li>
+  <li class="list-group-item">Capitan</li> -->
+
+  <!--?El *ngFor te permite realizar un ciclo de ejecución hasta que se complete la condición-->
+  <!--Se crea la variable name para 'almacenar' cada elemento del arreglo "heroNames" e imrpimirlo en la lista-->
+  <li *ngFor="let name of heroNames"
+      class="list-group-item">
+
+      {{ name }}
+  </li>
+</ul>
+
