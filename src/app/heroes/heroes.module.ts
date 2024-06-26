@@ -21,7 +21,6 @@ import { ListComponent } from "./list/list.component";
     CommonModule //Importación necesaria para el uso del ngIF, ngFor, etc.
   ]
 })
-
 export class heroesModule{
 
 }

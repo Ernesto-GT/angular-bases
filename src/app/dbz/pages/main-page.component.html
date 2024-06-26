@@ -1,0 +1,19 @@
+<h1>DBZ Personajes</h1>
+
+<hr>
+<!--?Con row y col se divide el espacio en pantalla en una tabla de n columas y registros-->
+<div class="row">
+
+  <div class="col">
+    <h4>Listado</h4>
+    <!--Pasamos el arreglo 'characters' como parametro para el characterList, y signamos el evento onDelete para borrar un personaje -->
+    <dbz-list (onDelete)="onDeleteCharacter($event)" [characterList]="characters"></dbz-list>
+  </div>
+
+  <div class="col">
+    <!--Formulario para agregar información-->
+    <!--?$event es una palabra reservada que hace referencia al tipo de atributos mandan a la funcion -->
+    <dbz-add-character (onNewCharacter)="addCharacter($event)"></dbz-add-character>
+  </div>
+
+</div>

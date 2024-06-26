@@ -1,0 +1,20 @@
+<!--?Cuando se coloca () hace referencia a un evento, y [] indica un atributo-->
+
+<h4>Agregar Personaje</h4>
+
+<!--ngSubmit es un evento diseñado para la propagación de formularios-->
+<form class="row" (ngSubmit)="emitCharacter()">
+  <!--input sirve para colocar un baner donde ingresar los datos-->
+  <input type="text" [(ngModel)]="character.name" name="name" class="form-control" placeholder="Nombre">
+  <!--El form-control hace que se pase de renglon y lo coloque como otro resitro-->
+
+  <input type="number" [(ngModel)]="character.power" name="power" class="form-control" placeholder="Poder">
+  <!--El submit sirve para que cuando se seleccione se haga el posteo-->
+  <button type="submit" class="btn btn-primary">
+    Agregar
+  </button>
+
+  <!--El pip '|' json sirve para tomar la vista del objeto tal y como lo queremos-->
+  <pre>{{character | json}}</pre>
+
+</form>

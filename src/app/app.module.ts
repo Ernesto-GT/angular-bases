@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 // import { ListComponent } from './heroes/list/list.component';
 import { CounterModule } from './counter/components/counter.module';
 import { heroesModule } from './heroes/heroes.module';
+import { DbzModule } from './dbz/dbz.module';
 
 @NgModule({
   //?Cuando se quiere usa un componente ajeno al modulo, se requiere importar la clase
@@ -27,7 +28,9 @@ import { heroesModule } from './heroes/heroes.module';
     AppRoutingModule,
     //Import del modulo counter y heros
     CounterModule,
-    heroesModule
+    heroesModule,
+    //Import modulo Dbz
+    DbzModule
   ],
   providers: [],
   bootstrap: [AppComponent]

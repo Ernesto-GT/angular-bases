@@ -1,0 +1,33 @@
+
+<ul class="list-group">
+  <!--Ciclo que toma todos los personajes de characterList-->
+  <!--index es una palabra reservada que maneja el indice de las listas-->
+  <li *ngFor="
+    let character of characterList;
+    let i = index;
+    let isFirst = first;
+    let isLast = last;
+    let isEven = even;
+    let isOdd = odd;"
+    class="list-group-item d-flex justify-content-between aling-items-center"
+    [ngClass]="{
+      'list-group-item-success': isLast,
+      'list-group-item-dark': isOdd,
+    }"> <!--?[ngClass] sirve para colocar clases mediante una condicion -->
+    <div>
+      <!--text-primary cambia el color de la letra a azul-->
+      <span class="text-primary">{{ i + 1 }}. </span>
+      <span>{{ character.name }} - </span>
+      <!--Letras remarcadas-->
+      <strong>Power: </strong>
+      <span>{{ character.power }}</span>
+    </div>
+
+    <button (click)="onDeleteCharacter(character.id)" class="btn btn-danger mx-2"> x </button>
+    <!-- <span>Es el primero: {{ isFirst }}</span>
+    <span> Es el ultimo: {{ isLast }}</span>
+    <span> Es par: {{ isEven }}</span>
+    <span> Es impar: </span> -->
+
+  </li>
+</ul>
